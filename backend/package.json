@@ -1,0 +1,40 @@
+{
+  "name": "sistema-ganadero-backend",
+  "version": "1.0.0",
+  "description": "API del Sistema Inteligente de Gestión Ganadera",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "certify:pwa": "node scripts/serve-pwa-certification.js",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "node --test --test-concurrency=1 test/health.test.js test/auth.test.js test/security.test.js test/errors.test.js test/validation.test.js test/tasks.validation.test.js test/authorization.test.js test/audit.test.js test/offline.test.js test/clima.test.js test/asistente.test.js test/asistente.mejoras.test.js test/asistente.p91.test.js test/asistente.p92.test.js test/asistente.p921.test.js test/asistente.p93.test.js test/testDatabaseProtection.test.js",
+    "test:integration": "node scripts/test-db.js reset && node --test --test-concurrency=1 test/migrations.integration.test.js && node scripts/test-db.js reset && node --test --test-concurrency=1 test/postgres.integration.test.js test/auth.integration.test.js test/authorization.integration.test.js test/transactions.integration.test.js test/batch-transactions.integration.test.js test/audit.integration.test.js test/tasks.integration.test.js test/offline.integration.test.js test/reproduccion-v2.integration.test.js test/costos-reproductivos.integration.test.js test/asistente.integration.test.js test/sync-dependencias.integration.test.js test/sync-campo-p82.integration.test.js test/sync-campo-p83.integration.test.js",
+    "test-db:create": "node scripts/test-db.js create",
+    "test-db:reset": "node scripts/test-db.js reset",
+    "migrate:init": "node scripts/migrate.js init",
+    "migrate:baseline": "node scripts/migrate.js baseline",
+    "migrate:status": "node scripts/migrate.js status",
+    "migrate:up": "node scripts/migrate.js up"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "8.7.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "node-cron": "^4.6.0",
+    "nodemailer": "^9.1.1",
+    "pg": "^8.11.5",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "supertest": "^7.2.2"
+  },
+  "overrides": {
+    "qs": "6.16.0"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "sistema-ganadero-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/generate-service-worker.mjs && node scripts/check-bundle.mjs",
+    "pwa:icons": "node scripts/generate-pwa-icons.mjs",
+    "test": "node --test test/permissions.test.js test/routing.test.js test/accessibility.test.js test/lazy-loading.test.js test/runtime-diagnostics.test.js test/partial-loads.test.js test/pdf.test.js test/excel-security.test.js test/guided-ux.test.js test/tasks.test.js test/alerts.test.js test/visual-consistency.test.js test/calendar-responsive.test.js test/monitoring-ux.test.js test/feedback-operations.test.js test/economic-inventory-ux.test.js test/navigation-context.test.js test/pwa.test.js test/mobile-operations.test.js test/preferences-profile.test.js test/security-auth.test.js test/experimental-redesign.test.js test/offline-indexeddb.test.js test/offline-session.test.js test/offline-flow.test.js test/offline-navigation.integration.test.js test/offline-queue.test.js test/offline-sync-p8.test.js test/offline-campo-p82.test.js test/offline-campo-p83.test.js test/clima-ux.test.js test/reproduccion-v2.test.js test/asistente-consultivo.test.js test/costos-reproductivos.test.js test/local-launcher.test.js test/lan-launcher.test.js test/https-local.test.js test/offline-arranque-p831.test.js test/demo-publica.test.js",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "idb": "^8.0.3",
+    "jspdf": "^4.2.1",
+    "jspdf-autotable": "^5.0.8",
+    "lucide-react": "^1.37.0",
+    "qrcode": "^1.5.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.18.2",
+    "read-excel-file": "9.3.10",
+    "recharts": "^2.12.7",
+    "write-excel-file": "4.1.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.0",
+    "fake-indexeddb": "^6.2.5",
+    "node-forge": "^1.4.0",
+    "vite": "^8.2.2"
+  }
+}

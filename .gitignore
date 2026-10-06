@@ -1,0 +1,82 @@
+# =========================================================
+# El Rancho — archivos que NUNCA deben subirse al repositorio
+# =========================================================
+
+# --- Dependencias (se reinstalan con "npm install") ---
+node_modules/
+
+# --- Variables de entorno y secretos ---
+# Solo se versionan las plantillas sin valores reales (*.example).
+.env
+.env.*
+!.env.example
+!.env.test.example
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.cer
+*.der
+
+# --- Compilados / build ---
+frontend/dist/
+backend/dist/
+dist/
+coverage/
+*.tsbuildinfo
+
+# --- Archivos subidos por usuarios (fotos de animales, datos del cliente) ---
+backend/uploads/
+uploads/
+
+# --- Bases de datos, respaldos y exportaciones con datos reales ---
+backups/
+respaldos/
+*.dump
+*.backup
+*.bak
+*.sql.gz
+*.sql.zip
+*.tar
+*.sqlite
+*.sqlite3
+*.db
+pg_dump*
+dump_*.sql
+backup_*.sql
+*.xlsx
+*.xls
+*.csv
+*.pdf
+
+# --- Logs y archivos temporales ---
+*.log
+logs/
+npm-debug.log*
+*.tmp
+*.temp
+*.swp
+tmp/
+temp/
+
+# --- Binarios y herramientas locales (se descargan aparte) ---
+tools/
+*.exe
+*.zip
+*.7z
+*.rar
+
+# --- Lanzadores locales con configuración de una máquina concreta ---
+INICIAR_SISTEMA_PUBLICO.bat
+
+# --- Sistema operativo y editores ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# --- Configuración local de asistentes de código ---
+.claude/
+.codex/
